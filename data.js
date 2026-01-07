@@ -212,7 +212,7 @@ const streamData = {
       19,
       1,
       "04",
-      "【自己紹介】Vtuber 一問一答自己紹介！【月紡めい⧸ねくすとぴあ】",
+      "ぼなぺてぃーと♡S ⧸ ブレンド・A  - Covered by 月紡めい【ねくすとぴあ】",
       ".webp",
       true
     ],
@@ -220,7 +220,7 @@ const streamData = {
       20,
       1,
       "05",
-      "youtube video #j6bq5fp2Uyw",
+      "【自己紹介】Vtuber 一問一答自己紹介！【月紡めい⧸ねくすとぴあ】",
       ".webp",
       false
     ],
