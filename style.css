@@ -1,0 +1,178 @@
+
+:root {
+    --imagecolor: #fdffd2;
+    --title-color: rgb(224, 171, 255);
+    --table-radius: 15px;
+}
+
+*{
+    padding: 0px; /*ここら辺はとりあえずつけてるやつ*/
+    margin: 0px;
+    box-sizing: border-box;
+    font-style: normal;
+    caret-color: transparent;
+    
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+    background-color: var(--imagecolor);
+}
+
+header{
+    color: #272727d7;
+    margin: 0 20px;
+    margin-top: 10px;
+    border-bottom: 3px solid rgb(153, 140, 127);
+}
+header h1{
+    font-size: 2rem;
+}
+
+img{
+    /*これがないと画像サイズが優先されてはみ出る*/
+    max-width: 100%;
+}
+
+#topChannelDescription{
+    border-radius: 1.5rem;
+    overflow: hidden;
+
+    height: min(20vw, 200px);
+    max-width: 900px;
+    margin: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    background-image: url(https://lh3.googleusercontent.com/d/188izk6OAPLnnKnjeZsBjrUz7aV5wWRuv);
+    background-size: 7em;
+    background-position: 30px 50px;
+}
+#topChannelDescription > div{
+    display: flex;
+    padding: 15px;
+    background-color: #FFFFFF80;
+    height: 100%;
+}
+#topChannelDescriptionLeft{
+    height: 100%;
+    aspect-ratio: 1; /*正方形にする*/
+    padding-right: 10px;
+    border-right: 2px solid rgba(175, 175, 175, 0.5);
+
+    /*中央寄せ*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#topChannelDescriptionRight{
+    padding-left: 10px;
+    max-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+#topChannelTitle{
+    display: flex;
+    align-items: center;
+    font-size: min(2.5vw, 1rem);
+    margin-bottom: 5px;
+}
+#topChannelDetail{
+    overflow: hidden;
+    font-size: min(2.5vw, 1rem);
+}
+#topChannelDetail p{
+    padding-bottom: 2px;
+}
+
+#menu{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 22px;
+}
+
+.channelIcon{
+    border-radius:50%; /*チャンネルアイコンを丸く*/
+}
+
+#streamList{
+    margin: 3px 10px;
+    color: #63554f;
+}
+
+.yearColumn{
+    padding: 0 10px;
+}
+.yearText{
+    font-size: 1.4rem;
+    border-bottom: 2px solid rgb(153, 140, 127);
+}
+.yearColumn > ul{
+    padding: 2px 0;
+}
+
+.monthColumn{
+    margin-left: 6px;
+}
+.monthColumn ul{
+    padding: 6px;
+    border-radius: 15px;
+}
+.monthText{
+    margin-top: 2px;
+    padding-left: 6px;
+    background-color: #eee2eb;
+    line-height: 1.7rem;
+}
+
+.videoElement{
+    padding: 12px 15px;
+    background-color: #FFFFFFB0;
+    margin-bottom: 4px;
+
+    display: flex;
+}
+.thumbnail{
+    width: min(30vw, 170px);
+    aspect-ratio: 16 / 9;
+    padding-right: 7px;
+    border-right: 2px solid rgba(175, 175, 175, 0.3);
+    flex-shrink: 0;
+    
+    /*たま～に16:9以外のサムネがあるから16:9にそろえる*/
+    /*中央寄せしてhidden*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.videoDescription{
+    margin-left: 7px;
+    padding-top: 10px;
+    min-width: 0;
+}
+.videoTitle{
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    max-width: 100%;
+}
+.videoDetails{
+    width: 100%;
+    margin-top: 3px;
+    margin-left: 3px;
+    display: flex;
+}
+.videoDetails p{
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
