@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月紡めい目録</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>めいちゃん配信リスト</h1>
+    </header>
+    
+    <div id="topChannelDescription">
+        <div>
+            <div id="topChannelDescriptionLeft">
+                <img class="channelIcon" src="https://yt3.googleusercontent.com/wohEjyFO_6uTALKC3E8K-tVDMPUbkuU5jUVvCQxDi0GBv7O_CdwfkgppfoDLbRwRAqeJykIWhA=s0" alt="チャンネルアイコン">
+            </div>
+            <div id="topChannelDescriptionRight">
+                <h2 id="topChannelTitle">月紡めい / Tsumugi Mei</h2>
+                <div id="topChannelDetail">
+                    <p>ねくすとぴあ所属のバーチャルウエイトレス、月紡めいです！</p>
+                    <p></p>
+                    <p>皆さんに癒しのひと時をお届けするため、日々配信中ꕤ.｡ﾟ
+    ぜひ遊びに来て下さいね！</p>
+                    <p>୨୧┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈୨୧</p>
+                    <p></p>
+                    <p>ꕤ月紡めい Official X ꕤ</p>
+                    <p>@Tsumugi__Mei</p>
+                    <p></p>
+                    <p>ꕤ sᴘᴇᴄɪᴀʟ ᴛʜᴀɴᴋs ꕤ</p>
+                    <p>みすみ様 https://twitter.com/z3_cut</p>
+                    <p>Date様 https://twitter.com/date_list</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu" style="display: none;">
+        <div>
+            <input type="text" id="searchText">
+            <button id="searchButton">検索</button>
+        </div>
+        <div>
+            <select id="selectSort">
+                <option>新しい順</option>
+                <option>新しくない順</option>
+            </select>
+        </div>
+    </div>
+    <ul id="streamList">
+        <li class="yearColumn" style="display: none;">
+            <h2 class="year"></h2>
+            <ul>
+                <li class="monthColumn">
+                    <ul>
+                        <li class="streamElement" style="display: none;">
+                            <div class="thumbnail">
+                                <img>
+                            </div>
+                            <div class="streamDescription">
+                                <h2></h2>
+                                <div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div id="commentList">
+
+    </div>
+
+    <script src="./data_member.js"></script>
+    <script src="./script_member.js"></script>
+</body>
+</html>
