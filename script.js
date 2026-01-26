@@ -41,19 +41,34 @@ function Init(){
             monthElement.appendChild(monthUl)
             yearUl.appendChild(monthElement);
 
-            //月リストに動画を追加
+            //月リストに日リストと動画を追加
             monthVideos = streamData['videos'].filter(video => video[1] == yearMonthId);
+            beforeDate = ''
+            let dayElement;
+            let dayUl;
             for(let monthVideo of monthVideos){
                 monthVideoId = monthVideo[0];
+                monthVideoMonthId = monthVideo[1];
                 monthVideoDay = Number(monthVideo[2]);
                 monthVideoTitleText = monthVideo[3];
                 monthVideoThumExt = monthVideo[4];
                 monthVideoIsLive = monthVideo[5];
 
+                if(beforeDate != monthVideoDay){
+                    beforeDate = monthVideoDay;
+                    dayElement = document.createElement('li');
+                    dayElement.className = 'dayColumn';
+                    dayUl = document.createElement('ul');
+                    dayElement.appendChild(dayUl);
+                    
+                    monthUl.appendChild(dayElement)
+                }
+
                 console.log(`  ${monthVideoDay}日`)
 
                 let videoElement = document.createElement('li');
                 videoElement.className = 'videoElement';
+                videoElement.dataset.id = monthVideoId;
                 //サムネイル
                 let monthVideoThumDiv = document.createElement('div');
                 monthVideoThumDiv.className = 'thumbnail';
@@ -83,10 +98,14 @@ function Init(){
                 monthVideoDetails.appendChild(monthVideoType);
                 monthVideoDescription.appendChild(monthVideoDetails);
                 videoElement.appendChild(monthVideoDescription);
-                monthUl.appendChild(videoElement)
+                dayUl.appendChild(videoElement)
             }
         }
     }
+}
+
+function showDetails(videoId){
+    console.log(videoId)
 }
 
 Init();
