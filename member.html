@@ -59,16 +59,20 @@
             <ul>
                 <li class="monthColumn">
                     <ul>
-                        <li class="streamElement" style="display: none;">
-                            <div class="thumbnail">
-                                <img>
-                            </div>
-                            <div class="streamDescription">
-                                <h2></h2>
-                                <div>
-                                    
-                                </div>
-                            </div>
+                        <li class="dayColumn">
+                            <ul>
+                                <li class="streamElement" style="display: none;">
+                                    <div class="thumbnail">
+                                        <img>
+                                    </div>
+                                    <div class="streamDescription">
+                                        <h2></h2>
+                                        <div>
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -76,11 +80,40 @@
         </li>
     </ul>
 
-    <div id="commentList">
+    <div id="selectDetails" style="display: none;">
+        <input type="radio">
+    </div>
+    <div id="details">
+        <div id="liveChatList">
+            <div class="chatElement" style="display: none;">
+                <div class="liveChatMainContent">
+                    <div class="chatIcon">
 
+                    </div>
+                    <div class="chatTimestamp">
+
+                    </div>
+                    <div class="author">
+
+                    </div>
+                    <div class="chatAuthorBadge">
+                        
+                    </div>
+                    <div class="chatContent">
+                        
+                    </div>
+                </div>
+                <div class="liveChatBottomContent">
+
+                </div>
+            </div>
+        </div>
+        <div id="commentList">
+            
+        </div>
     </div>
 
     <script src="./data_member.js"></script>
-    <script src="./script_member.js"></script>
+    <script src="./script.js" id="script" data-permission="member"></script>
 </body>
 </html>

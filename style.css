@@ -28,10 +28,11 @@ header{
     color: #272727d7;
     margin: 0 20px;
     margin-top: 10px;
-    border-bottom: 3px solid rgb(153, 140, 127);
+    border-bottom: 4px solid rgb(185, 156, 138);
 }
 header h1{
     font-size: 2rem;
+    margin: 3px;
 }
 
 img{
@@ -113,15 +114,13 @@ img{
 }
 .yearText{
     font-size: 1.4rem;
-    border-bottom: 3px solid rgb(153, 140, 127);
+    padding: 0 3px;
+    border-bottom: 3px solid rgb(185, 156, 138);
 }
 .yearColumn > ul{
     padding: 2px 0;
 }
 
-.monthColumn{
-
-}
 .monthColumn > ul{
     padding: 6px;
     border-radius: 15px;
@@ -143,7 +142,7 @@ img{
 
 .videoElement{
     padding: 12px 15px;
-    background-color: #FFFFFFB0;
+    background-color: #FFFFFFC0;
     margin-bottom: 4px;
     margin-left: 6px;
 

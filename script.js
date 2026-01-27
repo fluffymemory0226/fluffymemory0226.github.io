@@ -6,12 +6,17 @@ let streamElements = [];
 yearColumnTemp = document.querySelector('.yearColumn')
 
 function Init(){
+    //詳細のやつ消す
+    selectDetails.style.display = 'none';
+    details.style.display = 'none';
+
     //dateの整理
     let years = streamData['years'];
+    let thumbnailPath = script.dataset.permission == 'public'? 'thumbnails':'thumbnails_member'
 
     for(let year of years){
         //年リストの作成
-        console.log(`${year}年:`)
+        //console.log(`${year}年:`)
 
         let yearElement = document.createElement('li');
         yearElement.className ='yearColumn';
@@ -29,7 +34,7 @@ function Init(){
             yearMonthId = yearMonth[0];
             yearMonthValue = Number(yearMonth[2]);  
 
-            console.log(` ${yearMonthValue}月`)
+            //console.log(` ${yearMonthValue}月`)
             
             let monthElement = document.createElement('li');
             monthElement.className = 'monthColumn';
@@ -56,6 +61,8 @@ function Init(){
 
                 if(beforeDate != monthVideoDay){
                     beforeDate = monthVideoDay;
+                    //console.log(`  ${monthVideoDay}日`)
+
                     dayElement = document.createElement('li');
                     dayElement.className = 'dayColumn';
                     dayUl = document.createElement('ul');
@@ -64,16 +71,18 @@ function Init(){
                     monthUl.appendChild(dayElement)
                 }
 
-                console.log(`  ${monthVideoDay}日`)
-
                 let videoElement = document.createElement('li');
                 videoElement.className = 'videoElement';
                 videoElement.dataset.id = monthVideoId;
+
+                //関数をセット
+                videoElement.onclick = showDetails;
+
                 //サムネイル
                 let monthVideoThumDiv = document.createElement('div');
                 monthVideoThumDiv.className = 'thumbnail';
                 let monthVideoThumbnail = document.createElement('img');
-                monthVideoThumbnail.setAttribute('src', `./thumbnails/${monthVideoId}${monthVideoThumExt}`)
+                monthVideoThumbnail.setAttribute('src', `./${thumbnailPath}/${monthVideoId}${monthVideoThumExt}`)
                 monthVideoThumDiv.appendChild(monthVideoThumbnail);
                 videoElement.appendChild(monthVideoThumDiv);
 
@@ -104,8 +113,78 @@ function Init(){
     }
 }
 
-function showDetails(videoId){
-    console.log(videoId)
+function showDetails(){
+    let videoId = this.dataset.id;
+    let chatElementTemp = liveChatList.children[0]
+
+    let liveChatDataList = streamData.chats.filter(chat => chat[1] == videoId);
+    selectDetails.style.display = 'block';
+    details.style.display = 'block';
+
+    //各チャットの要素を追加
+    for(let liveChat of liveChatDataList){
+        let liveChatElement = chatElementTemp.cloneNode(true);
+        
+        //要素の整理
+        let chatType = liveChat[2];
+        let authorId = liveChat[3];
+        let message = liveChat[5];
+        let timestamp = liveChat[6];
+        //ユーザーの情報
+        let chatAuthor = streamData.users.find(user => user[0] == authorId);
+        let authorName = chatAuthor[2];
+        let authorIconUrl = chatAuthor[3];
+        let authorBadge = chatAuthor[4];
+
+        //アイコン
+        let iconDiv = liveChatElement.querySelector('.chatIcon');
+        let iconImage = document.createElement('img');
+        iconImage.setAttribute('src', authorIconUrl);
+        iconImage.className = 'channelIcon';
+        iconDiv.appendChild(iconImage)
+
+        //タイムスタンプ
+        let timestampDiv = liveChatElement.querySelector('.chatTimestamp');
+        timestampDiv.textContent = timestamp;
+
+        //コメ主
+        let authorDiv = liveChatElement.querySelector('.author');
+        authorDiv.textContent = authorName;
+
+        //チャット内容
+        let chatContent = liveChatElement.querySelector('.chatContent');
+        for(let mes of message){
+            let span = document.createElement('span');
+
+            if(chatType == 'text'){
+
+            }
+            else if(chatType == 'member'){
+                
+            }
+
+            if(mes[0] == 'text'){
+                span.textContent = mes[1];
+            }
+            else if(mes[0] == 'emoji'){
+                let img = document.createElement('img');
+                let emojiUrl = ''
+                if(mes[1] == 'custom'){
+                    emojiUrl = './customEmoji/'+mes[2];
+                }
+                else if(mes[1] == 'normal'){
+                    emojiUrl = mes[2];
+                }
+                img.setAttribute('src', emojiUrl);
+                span.appendChild(img);
+            }
+
+            chatContent.appendChild(span);
+        }
+
+        liveChatElement.style.display = 'block';
+        liveChatList.appendChild(liveChatElement);
+    }
 }
 
 Init();
