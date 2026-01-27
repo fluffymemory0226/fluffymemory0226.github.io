@@ -128,7 +128,7 @@ img{
 .monthText{
     margin-top: 2px;
     padding-left: 6px;
-    background-color: #eee2eb;
+    background-color: #e5d0e7;
     line-height: 1.7rem;
 }
 
@@ -171,6 +171,7 @@ img{
     overflow: hidden;
     max-height: 2.5rem;
     font-size: 0.9rem;
+    line-height: 1.4;
     max-width: 100%;
 }
 .videoDetails{
