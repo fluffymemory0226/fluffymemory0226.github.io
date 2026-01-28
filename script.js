@@ -4,6 +4,7 @@ let monthElements = [];
 let streamElements = [];
 
 yearColumnTemp = document.querySelector('.yearColumn')
+chatElementTemp = document.querySelector('.chatElement');
 
 function Init(){
     //詳細のやつ消す
@@ -113,78 +114,97 @@ function Init(){
     }
 }
 
+function joinMessage(message, element){
+    for(let mes of message){
+        let span = document.createElement('span');
+        span.className = 'chatMessageText';
+
+        if(mes[0] == 'text'){
+            span.textContent = mes[1];
+        }
+        else if(mes[0] == 'emoji'){
+            let img = document.createElement('img');
+            let emojiUrl = ''
+            if(mes[1] == 'custom'){
+                emojiUrl = './customEmoji/'+mes[2];
+            }
+            else if(mes[1] == 'normal'){
+                emojiUrl = mes[2];
+            }
+            img.setAttribute('src', emojiUrl);
+            span.appendChild(img);
+        }
+
+        element.appendChild(span);
+    }
+}
+
 function showDetails(){
+    liveChatList.style.display = 'block';
+    //テンプレート以外空にする
+    while(1 < liveChatList.childElementCount){
+        liveChatList.removeChild(liveChatList.lastChild);
+    }
+
     let videoId = this.dataset.id;
-    let chatElementTemp = liveChatList.children[0]
 
     let liveChatDataList = streamData.chats.filter(chat => chat[1] == videoId);
-    selectDetails.style.display = 'block';
+    //selectDetails.style.display = 'block';
     details.style.display = 'block';
 
     //各チャットの要素を追加
+    let count = 0
     for(let liveChat of liveChatDataList){
         let liveChatElement = chatElementTemp.cloneNode(true);
+        liveChatElement.style.display = 'block';
         
         //要素の整理
         let chatType = liveChat[2];
         let authorId = liveChat[3];
-        let message = liveChat[5];
-        let timestamp = liveChat[6];
+        let authorBadge = liveChat[5]
+        let message = liveChat[6];
+        let timestamp = liveChat[7];
         //ユーザーの情報
         let chatAuthor = streamData.users.find(user => user[0] == authorId);
         let authorName = chatAuthor[2];
         let authorIconUrl = chatAuthor[3];
-        let authorBadge = chatAuthor[4];
 
-        //アイコン
-        let iconDiv = liveChatElement.querySelector('.chatIcon');
-        let iconImage = document.createElement('img');
-        iconImage.setAttribute('src', authorIconUrl);
-        iconImage.className = 'channelIcon';
-        iconDiv.appendChild(iconImage)
+        if(chatType != 'gifted'){
+            //アイコン
+            let iconDiv = liveChatElement.querySelector('.chatLeftContent');
+            let iconImage = document.createElement('img');
+            iconImage.setAttribute('src', authorIconUrl);
+            iconImage.className = 'channelIcon';
+            iconDiv.appendChild(iconImage)
 
-        //タイムスタンプ
-        let timestampDiv = liveChatElement.querySelector('.chatTimestamp');
-        timestampDiv.textContent = timestamp;
+            //バッジ
+
+        }
 
         //コメ主
-        let authorDiv = liveChatElement.querySelector('.author');
+        let authorDiv = liveChatElement.querySelector('.chatAuthor');
         authorDiv.textContent = authorName;
 
         //チャット内容
-        let chatContent = liveChatElement.querySelector('.chatContent');
-        for(let mes of message){
-            let span = document.createElement('span');
+        let channelIcon
+        if(chatType == 'text'){
+            console.log(`${count} text ${timestamp} ${authorName}${authorBadge?'📛':''}`)
 
-            if(chatType == 'text'){
-
-            }
-            else if(chatType == 'member'){
-                
-            }
-
-            if(mes[0] == 'text'){
-                span.textContent = mes[1];
-            }
-            else if(mes[0] == 'emoji'){
-                let img = document.createElement('img');
-                let emojiUrl = ''
-                if(mes[1] == 'custom'){
-                    emojiUrl = './customEmoji/'+mes[2];
-                }
-                else if(mes[1] == 'normal'){
-                    emojiUrl = mes[2];
-                }
-                img.setAttribute('src', emojiUrl);
-                span.appendChild(img);
-            }
-
-            chatContent.appendChild(span);
+            //タイムスタンプ
+            let timestampDiv = liveChatElement.querySelector('.chatTimestamp');
+            timestampDiv.textContent = timestamp;
+            //メッセージ
+            joinMessage(message, liveChatElement.querySelector('.chatFirstContent'));
         }
 
-        liveChatElement.style.display = 'block';
+
+        let chatContent = liveChatElement.querySelector('.chatContent');
+
         liveChatList.appendChild(liveChatElement);
+        count++
     }
+
+    liveChatList.scrollIntoView()
 }
 
 Init();

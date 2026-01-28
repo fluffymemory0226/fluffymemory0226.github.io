@@ -169,9 +169,12 @@ img{
 }
 .videoTitle{
     overflow: hidden;
+    /*改行した時二行分だけ表示させたい*/
     max-height: 2.5rem;
     font-size: 0.9rem;
-    line-height: 1.4;
+    /*パソコンだと大丈夫だけどスマホで見るとはみ出してたから追加*/
+    line-height: 1.5;
+    font-size: 0.9rem;
     max-width: 100%;
 }
 .videoDetails{
@@ -185,3 +188,21 @@ img{
     font-size: 0.8rem;
 }
 
+
+#liveChatList{
+    margin: 10px;
+    padding: 5px;
+    background-color: #FFFFFFC0;
+    border: 2px solid rgba(90, 82, 72, 0.7);
+}
+.chatElement{
+    line-height: 1.2rem;
+}
+.chatElement img{
+    max-height: 1.2rem;
+    vertical-align: -0.2rem;
+    margin: 0 1px;
+}
+.chatElement .channelIcon{
+    max-height: 2.5rem;
+}
