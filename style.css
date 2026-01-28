@@ -201,9 +201,9 @@ img{
     vertical-align: middle;
 }
 .chatElement:not(:nth-child(2)){
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-    border-top: 1px solid rgba(90, 82, 72, 0.3);
+    margin-top: 0.2rem;
+    padding-top: 0.3rem;
+    /*border-top: 1px solid rgba(90, 82, 72, 0.3);*/
 }
 .liveChatTopContent{
     display: flex;
