@@ -200,6 +200,7 @@ img{
 }
 .chatElement{
     font-size: 0.7rem;
+    line-height: 0.9rem;
     vertical-align: middle;
     border-radius: 4px;
     overflow: hidden;
@@ -229,8 +230,11 @@ img{
     font-size: 0.9em;
     color: #8b868b;
 }
-.chatFirstContent span.chatTimestamp, .chatFirstContent span.chatAuthorBadge{
-    padding-right: 0.6em;
+.chatFirstContent span.chatTimestamp{
+    margin: 0.8em;
+}
+.chatFirstContent span.chatAuthorBadge{
+    margin-right: 0.8em;
 }
 .emoji{
     /*絵文字用*/
