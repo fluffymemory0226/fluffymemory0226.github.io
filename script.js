@@ -180,6 +180,7 @@ function showDetails(){
 
             //バッジ
             if(authorBadge){
+                liveChatElement.classList.add('membersChat');
                 let img = document.createElement('img');
                 img.className = 'badge';
                 img.src = `./badges/${authorBadge}`;

@@ -197,7 +197,8 @@ img{
 }
 .chatElement{
     padding: 0 0.5rem;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    vertical-align: middle;
 }
 .chatElement:not(:nth-child(2)){
     margin-top: 0.5rem;
@@ -206,24 +207,31 @@ img{
 }
 .liveChatTopContent{
     display: flex;
-    gap: 0.8rem;
+    gap: 0.6rem;
 }
 .chatLeftContent{
     width: 2em;
 }
 .chatRightContent{
-    margin-top: 0.1rem;
+    margin-top: 0em;
+}
+.chatTimestamp{
+    font-size: 0.9em;
+    color: #8b868b;
 }
 .chatFirstContent span.chatTimestamp, .chatFirstContent span.chatAuthorBadge{
-    margin-right: 0.4em;
+    margin-right: 0.6em;
 }
 .emoji{
     /*絵文字用*/
-    max-height: 1.2rem;
-    vertical-align: -0.2rem;
+    max-height: 1.7em;
+    vertical-align: -0.4em;
     margin: 0 1px;
 }
 .badge{
-    max-height: 1.2rem;
-    vertical-align: -0.3rem;
+    max-height: 1.3em;
+    vertical-align: -0.3em;
+}
+.membersChat .chatAuthor{
+    color: #107516;
 }
