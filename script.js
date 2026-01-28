@@ -132,6 +132,7 @@ function joinMessage(message, element){
                 emojiUrl = mes[2];
             }
             img.setAttribute('src', emojiUrl);
+            img.className = 'emoji';
             span.appendChild(img);
         }
 
@@ -178,7 +179,12 @@ function showDetails(){
             iconDiv.appendChild(iconImage)
 
             //バッジ
-
+            if(authorBadge){
+                let img = document.createElement('img');
+                img.className = 'badge';
+                img.src = `./badges/${authorBadge}`;
+                liveChatElement.querySelector('.chatAuthorBadge').appendChild(img);
+            }
         }
 
         //コメ主

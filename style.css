@@ -191,18 +191,39 @@ img{
 
 #liveChatList{
     margin: 10px;
-    padding: 5px;
+    padding: 15px;
     background-color: #FFFFFFC0;
-    border: 2px solid rgba(90, 82, 72, 0.7);
+    border: 1px solid rgba(90, 82, 72, 0.3);
 }
 .chatElement{
-    line-height: 1.2rem;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
 }
-.chatElement img{
+.chatElement:not(:nth-child(2)){
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(90, 82, 72, 0.3);
+}
+.liveChatTopContent{
+    display: flex;
+    gap: 0.8rem;
+}
+.chatLeftContent{
+    width: 2em;
+}
+.chatRightContent{
+    margin-top: 0.1rem;
+}
+.chatFirstContent span.chatTimestamp, .chatFirstContent span.chatAuthorBadge{
+    margin-right: 0.4em;
+}
+.emoji{
+    /*絵文字用*/
     max-height: 1.2rem;
     vertical-align: -0.2rem;
     margin: 0 1px;
 }
-.chatElement .channelIcon{
-    max-height: 2.5rem;
+.badge{
+    max-height: 1.2rem;
+    vertical-align: -0.3rem;
 }
