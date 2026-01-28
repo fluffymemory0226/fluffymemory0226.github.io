@@ -45122,17 +45122,7 @@ const streamData = {
       "text",
       "UC4OXlDMLMFnlqY94ydKTniQ",
       "月紡めい / Tsumugi Mei",
-      {
-        "icon": {
-          "iconType": "OWNER"
-        },
-        "tooltip": "Owner",
-        "accessibility": {
-          "accessibilityData": {
-            "label": "Owner"
-          }
-        }
-      },
+      null,
       [
         [
           "text",
@@ -53363,17 +53353,7 @@ const streamData = {
       "text",
       "UC4OXlDMLMFnlqY94ydKTniQ",
       "月紡めい / Tsumugi Mei",
-      {
-        "icon": {
-          "iconType": "OWNER"
-        },
-        "tooltip": "Owner",
-        "accessibility": {
-          "accessibilityData": {
-            "label": "Owner"
-          }
-        }
-      },
+      null,
       [
         [
           "text",
@@ -53609,17 +53589,7 @@ const streamData = {
       "text",
       "UC4OXlDMLMFnlqY94ydKTniQ",
       "月紡めい / Tsumugi Mei",
-      {
-        "icon": {
-          "iconType": "OWNER"
-        },
-        "tooltip": "Owner",
-        "accessibility": {
-          "accessibilityData": {
-            "label": "Owner"
-          }
-        }
-      },
+      null,
       [
         [
           "text",
@@ -53955,17 +53925,7 @@ const streamData = {
       "text",
       "UC4OXlDMLMFnlqY94ydKTniQ",
       "月紡めい / Tsumugi Mei",
-      {
-        "icon": {
-          "iconType": "OWNER"
-        },
-        "tooltip": "Owner",
-        "accessibility": {
-          "accessibilityData": {
-            "label": "Owner"
-          }
-        }
-      },
+      null,
       [
         [
           "text",
@@ -54265,17 +54225,7 @@ const streamData = {
       "text",
       "UC4OXlDMLMFnlqY94ydKTniQ",
       "月紡めい / Tsumugi Mei",
-      {
-        "icon": {
-          "iconType": "OWNER"
-        },
-        "tooltip": "Owner",
-        "accessibility": {
-          "accessibilityData": {
-            "label": "Owner"
-          }
-        }
-      },
+      null,
       [
         [
           "text",
@@ -95605,9 +95555,7 @@ const streamData = {
         ]
       ],
       "41:09",
-      {
-        "simpleText": "つむぎめいと"
-      },
+      "つむぎめいと",
       [
         [
           "text",
@@ -95742,9 +95690,7 @@ const streamData = {
         ]
       ],
       "41:24",
-      {
-        "simpleText": "つむぎめいと"
-      },
+      "つむぎめいと",
       [
         [
           "text",
@@ -95804,9 +95750,7 @@ const streamData = {
         ]
       ],
       "42:11",
-      {
-        "simpleText": "つむぎめいと"
-      },
+      "つむぎめいと",
       [
         [
           "text",
@@ -95882,9 +95826,7 @@ const streamData = {
         ]
       ],
       "42:37",
-      {
-        "simpleText": "つむぎめいと"
-      },
+      "つむぎめいと",
       [
         [
           "text",
@@ -96397,9 +96339,7 @@ const streamData = {
         ]
       ],
       "45:52",
-      {
-        "simpleText": "つむぎめいと"
-      },
+      "つむぎめいと",
       [
         [
           "text",

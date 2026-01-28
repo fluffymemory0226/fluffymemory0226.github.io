@@ -192,35 +192,45 @@ img{
 #liveChatList{
     margin: 10px;
     padding: 5px 15px;
+    padding-right: 5px;
     background-color: #FFFFFFC0;
     border: 1px solid rgba(90, 82, 72, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
 }
 .chatElement{
-    padding: 0 0.5rem;
     font-size: 0.7rem;
     vertical-align: middle;
+    border-radius: 4px;
+    overflow: hidden;
 }
 .chatElement:not(:nth-child(2)){
-    margin-top: 0.2rem;
-    padding-top: 0.3rem;
+    margin-top: 0.3rem;
     /*border-top: 1px solid rgba(90, 82, 72, 0.3);*/
 }
 .liveChatTopContent{
     display: flex;
-    gap: 0.6rem;
+    align-items: center;
 }
 .chatLeftContent{
     width: 2em;
+    /*コメントが折り返す長さになってもアイコンが縮まらないように*/
+    flex-shrink: 0;
+}
+.chatLeftContent .channelIcon{
+    /*404の画像のやつが大きくなってくれない…*/
+    /*width: 100%;*/
 }
 .chatRightContent{
     margin-top: 0em;
+    padding: 0.5em 0;
 }
 .chatTimestamp{
     font-size: 0.9em;
     color: #8b868b;
 }
 .chatFirstContent span.chatTimestamp, .chatFirstContent span.chatAuthorBadge{
-    margin-right: 0.6em;
+    padding-right: 0.6em;
 }
 .emoji{
     /*絵文字用*/
@@ -232,6 +242,39 @@ img{
     max-height: 1.3em;
     vertical-align: -0.3em;
 }
+.chatAuthor{
+    color: #3d3b3d;
+}
 .membersChat .chatAuthor{
     color: #107516;
+}
+
+.memberMileRenderer .liveChatTopContent, .memberRenderer .liveChatTopContent{
+    background-color: #0f9d58;
+}
+.memberMileRenderer .liveChatBottomContent, .memberRenderer .liveChatBottomContent{
+    background-color: #1eb76e;
+    color: white;
+    font-size: 1.3em;
+    padding: 0.5em 0.8em;
+}
+.memberMileRenderer .chatLeftContent, .memberRenderer .chatLeftContent{
+    width: 3em;
+    /*コメントが折り返す長さになってもアイコンが縮まらないように*/
+    flex-shrink: 0;
+}.memberRenderer .chatLeftContent{
+    margin: 0.4rem 1em;
+}
+.memberMileRenderer .chatLeftContent{
+    margin: 0.6rem 1.2em;
+}
+.memberMileRenderer .chatAuthor, .memberRenderer .chatAuthor{
+    color: white;
+}
+.memberMileRenderer .chatSecondContent, .memberRenderer .chatSecondContent{
+    font-size: 1.2em;
+    color: white;
+}
+.memberMileRenderer .chatThirdContent, .memberRenderer .chatThirdContent{
+    color: #e5e1e5;
 }

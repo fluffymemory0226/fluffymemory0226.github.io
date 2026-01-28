@@ -193,9 +193,8 @@ function showDetails(){
         authorDiv.textContent = authorName;
 
         //チャット内容
-        let channelIcon
         if(chatType == 'text'){
-            console.log(`${count} text ${timestamp} ${authorName}${authorBadge?'📛':''}`)
+            console.log(`${count} text ${timestamp} ${authorName}${authorBadge?'📛':''}`);
 
             //タイムスタンプ
             let timestampDiv = liveChatElement.querySelector('.chatTimestamp');
@@ -203,15 +202,36 @@ function showDetails(){
             //メッセージ
             joinMessage(message, liveChatElement.querySelector('.chatFirstContent'));
         }
+        else if(chatType == 'member' || chatType == 'memberMile'){
+            console.log(`${count} ${chatType} ${timestamp} ${authorName}${authorBadge?'📛':''}`);
+            liveChatElement.classList.add(chatType+'Renderer');
 
+            liveChatElement.querySelector('.chatTimestamp').style.display = 'none';
+            
+            let headerSubText = liveChat[8];
+            let headerPrimaryText = liveChat[9];
+            if(headerPrimaryText){
+                joinMessage(headerPrimaryText, liveChatElement.querySelector('.chatSecondContent'))
+                liveChatElement.querySelector('.chatThirdContent').textContent = headerSubText;
+            }
+            else{
+                joinMessage(headerSubText, liveChatElement.querySelector('.chatThirdContent'))
+            }
 
-        let chatContent = liveChatElement.querySelector('.chatContent');
+            if(message){
+                joinMessage(message, liveChatElement.querySelector('.liveChatBottomContent'));
+            }
+            else{
+                liveChatElement.querySelector('.liveChatBottomContent').style.display = 'none';
+            }
+        }
 
         liveChatList.appendChild(liveChatElement);
         count++
     }
 
     liveChatList.scrollIntoView()
+    liveChatList.scrollTop = 0;
 }
 
 Init();
