@@ -225,6 +225,25 @@ function showDetails(){
                 liveChatElement.querySelector('.liveChatBottomContent').style.display = 'none';
             }
         }
+        else if(chatType == 'paid'){
+            console.log(`${count} ${chatType} ${timestamp} ${authorName}${authorBadge?'📛':''}`);
+            liveChatElement.classList.add('paidRenderer');
+
+            liveChatElement.querySelector('.chatTimestamp').style.display = 'none';
+
+            let purchaseAmountText = liveChat[8];
+            let messageColor = liveChat[9];
+
+            liveChatElement.querySelector('.paidChatAmount').textContent = purchaseAmountText;
+            if(message){
+                joinMessage(message, liveChatElement.querySelector('.liveChatBottomContent'));
+            }
+            else{
+                liveChatElement.querySelector('.liveChatBottomContent').style.display = 'none';
+            }
+
+            liveChatElement.classList.add(messageColor);
+        }
 
         liveChatList.appendChild(liveChatElement);
         count++

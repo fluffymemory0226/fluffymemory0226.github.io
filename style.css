@@ -25,10 +25,10 @@ html{
 }
 
 header{
-    color: #272727d7;
+    color: #4e4b4bd7;
     margin: 0 20px;
     margin-top: 10px;
-    border-bottom: 4px solid rgb(185, 156, 138);
+    border-bottom: 4px solid rgb(163, 139, 124);
 }
 header h1{
     font-size: 2rem;
@@ -115,7 +115,7 @@ img{
 .yearText{
     font-size: 1.4rem;
     padding: 0 3px;
-    border-bottom: 3px solid rgb(185, 156, 138);
+    border-bottom: 3px solid rgb(163, 137, 119);
 }
 .yearColumn > ul{
     padding: 2px 0;
@@ -240,14 +240,14 @@ img{
     /*絵文字用*/
     max-height: 1.7em;
     vertical-align: -0.4em;
-    margin: 0 1px;
+    margin: 0 1.5px;
 }
 .badge{
     max-height: 1.3em;
     vertical-align: -0.3em;
 }
 .chatAuthor{
-    color: #3d3b3d;
+    color: #726c72;
 }
 .membersChat .chatAuthor{
     color: #107516;
@@ -262,12 +262,19 @@ img{
     font-size: 1.3em;
     padding: 0.5em 0.8em;
 }
-.memberMileRenderer .chatLeftContent, .memberRenderer .chatLeftContent{
+.paidRenderer .liveChatBottomContent{
+    font-size: 1.3em;
+    padding: 1em;
+    padding-top: 0.2em;
+}
+.memberMileRenderer .chatLeftContent, .memberRenderer .chatLeftContent, .paidRenderer .chatLeftContent{
     width: 3em;
     /*コメントが折り返す長さになってもアイコンが縮まらないように*/
     flex-shrink: 0;
-}.memberRenderer .chatLeftContent{
+}
+.memberRenderer .chatLeftContent, .paidRenderer .chatLeftContent{
     margin: 0.4rem 1em;
+    aspect-ratio: 1; /*正方形にする*/
 }
 .memberMileRenderer .chatLeftContent{
     margin: 0.6rem 1.2em;
@@ -281,4 +288,32 @@ img{
 }
 .memberMileRenderer .chatThirdContent, .memberRenderer .chatThirdContent{
     color: #e5e1e5;
+}
+
+.paidRenderer .chatAuthor{
+    color: #a9a3a9;
+}
+.paidChatAmount{
+    font-size: 1.1em;
+}
+.paidRenderer.blue{
+    background-color: #1e88e5;
+}
+.paidRenderer.lightBlue{
+    background-color: #00e5ff;
+}
+.paidRenderer.yellowGreen{
+    background-color: #1de9b6;
+}
+.paidRenderer.yellow{
+    background-color: #ffca28;
+}
+.paidRenderer.orange{
+    background-color: #f57c00;
+}
+.paidRenderer.pink{
+    background-color: #e91e63;
+}
+.paidRenderer.red{
+    background-color: #e62117;
 }
